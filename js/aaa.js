@@ -28,6 +28,6 @@ function hello() {
 
 
 logOutButton.addEventListener("click", function () {
-  open("./index-login.html", "_blank");
+  open("./index.html", "_blank");
   close("./home.html");
 });

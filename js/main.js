@@ -51,7 +51,9 @@ function adduser() {
         console.log(validationname());
         allUser.push(userinfo);
         localStorage.setItem("allusers", JSON.stringify(allUser));
-        displayalluser();
+      displayalluser();
+      open("./index.html");
+      close("./register.html");
         clearinput();
         allert3();
         userpasword.classList.remove("is-valid");
@@ -75,21 +77,25 @@ function clearinput() {
   useremail.value = null;
   username.value = null;
   userpasword.value = null;
-  loginUseremail=null;
-  loginUserpasword=null;
+ 
 }
 /*====================END=display in console and clear input====================*/ 
 
-
+// function clearlogin() {
+//    loginUseremail=null;
+//   loginUserpasword=null;
+// }
 
 function login() {
+ 
   for (let i = 0; i < allUser.length; i++) {
     if (emailfoundlogin() && passfoundlogin()) {
+      
       localStorage.setItem("userName", JSON.stringify(allUser[i].name));
       
       // window.location.href = "home.html";
-      close("./index-login.html");
-      open("./home.html","_blank");
+      close("./index.html");
+      open("./home.html");
 
     } else {
       allert2;
@@ -98,6 +104,26 @@ function login() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+function hello() {
+  Swal.fire({
+    position: "top-left",
+    icon: "success",
+    title: "Register Successful",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+}
 
 // var user = document.getElementById("demo");
 // // variable empty first to store user name after login
@@ -231,6 +257,7 @@ function namefound() {
 function passfoundlogin() {
   for (var i = 0; i < allUser.length; i++) {
     if (loginUserpasword.value == allUser[i].password) {
+      
       return true;
     }
   }
