@@ -52,10 +52,12 @@ function adduser() {
         allUser.push(userinfo);
         localStorage.setItem("allusers", JSON.stringify(allUser));
       displayalluser();
-      open("./index.html");
+
+      open("./index.html", "_blank");
+     
       close("./register.html");
         clearinput();
-        allert3();
+         allert3();
         userpasword.classList.remove("is-valid");
         useremail.classList.remove("is-valid");
         username.classList.remove("is-valid");
@@ -94,7 +96,7 @@ function login() {
       localStorage.setItem("userName", JSON.stringify(allUser[i].name));
       
       // window.location.href = "home.html";
-      close("./index.html");
+      close("./index.html","_blank");
       open("./home.html");
 
     } else {
