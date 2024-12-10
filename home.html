@@ -13,7 +13,7 @@
 <body  >
     <!-- Section nav start -->
     <nav   class="navbar navbar-expand-lg  shadow">
-        <div class="container">
+        <div class="container ">
             <a class="navbar-brand display-3 fw-bolder" href="#">Smart Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -23,8 +23,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active btn btn-dark text-white" aria-current="page" href="index-login.html">
-                            Log out</a>
+                        <button type="button" id="logout" class="nav-link active btn btn-primary text-white" aria-current="page" >
+                            Log out</button>
                     </li>
                 </ul>
             </div>
@@ -33,22 +33,23 @@
     <!-- Section nav end -->
 
     <!-- Section home start -->
-    <section class=" bg-dark-subtle min-vh-100">
-        <div class="container d-flex justify-content-center ">
-            <div class="row w-100 p-5 d-flex justify-content-center rounded-2 my-5 bg-dark ">
-                <div class="col-md-10 bg-light border  rounded-2 ">
-                    <div class="bg-lights p-5">
-                        <h1 class="display-3 text-center w-100" id="user"></h1>
+    <main class=" min-vh-100">
+        <div class="container d-flex justify-content-center  ">
+            <div class="row w-100 p-5 d-flex justify-content-center rounded-2 my-5  ">
+                <div class="col-md-10 bg-light border mt-5  rounded-2 ">
+                    <div class=" p-5">
+                        <h1 class="h1 fw-bold text-capitalize text-center w-100" id="demo">gege</h1>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
     <!-- Section home end -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/aaa.js"></script>
 </body>
 
 </html>

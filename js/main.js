@@ -8,11 +8,15 @@ var buttunadduserr = document.getElementById("buttunadduser");
 
 var loginUseremail = document.getElementById("usermail");
 var loginUserpasword = document.getElementById("userPasword");
+var logOutButton = document.getElementById("logout");
 
 var regaxName = /^[a-z0-9_-]{3,15}$/;
 var regaxEmail = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
 var regaxPass =/^[\w\W  ]{8,}$/;
 var allUser = [];
+
+
+
 
 var foundelement = localStorage.getItem("allusers");
 if (foundelement == undefined) {
@@ -71,6 +75,8 @@ function clearinput() {
   useremail.value = null;
   username.value = null;
   userpasword.value = null;
+  loginUseremail=null;
+  loginUserpasword=null;
 }
 /*====================END=display in console and clear input====================*/ 
 
@@ -79,8 +85,11 @@ function clearinput() {
 function login() {
   for (let i = 0; i < allUser.length; i++) {
     if (emailfoundlogin() && passfoundlogin()) {
-      localStorage.setItem("userName", JSON.stringify( allUser[i].name));
-      window.location.href = "home.html";
+      localStorage.setItem("userName", JSON.stringify(allUser[i].name));
+      
+      // window.location.href = "home.html";
+      close("./index-login.html");
+      open("./home.html","_blank");
 
     } else {
       allert2;
@@ -90,31 +99,23 @@ function login() {
 }
 
 
+// var user = document.getElementById("demo");
+// // variable empty first to store user name after login
+// var userName;
+// // check if username exists
+// if (localStorage.getItem("userName") != null) {
+//   userName = JSON.parse(localStorage.getItem("userName"));
 
-  
-  //  Message welcome username in home
-  var userTag = document.getElementById("user");
-  var userName =  JSON.parse (localStorage.getItem("userName") );
-// variable empty first to store user name after login
-
-// check if username exists
-if (userName != null) {
- userTag.innerHTML= "Welcome" + userName;
-
-}
+//   var namo = userName;
+//   console.log(userName);
+//   // Message welcome username in home
+//   user.innerHTML = "Welcome " + namo;
+// }
 
 
 
-function hello() {
-  
-Swal.fire({
-  position: "top-end",
-  icon: "success",
-  title: "Login Successful",
-  showConfirmButton: false,
-  timer: 2000,
-});
-}
+     
+
 function allert3() {
   Swal.fire({
     icon: "success",
@@ -230,7 +231,6 @@ function namefound() {
 function passfoundlogin() {
   for (var i = 0; i < allUser.length; i++) {
     if (loginUserpasword.value == allUser[i].password) {
-   
       return true;
     }
   }
